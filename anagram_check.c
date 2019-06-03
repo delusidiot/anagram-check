@@ -26,8 +26,8 @@ int main()
 int check_anagram(char a[], char b[])
 {
 	int first[26] = { 0 }, second[26] = { 0 }, a_c = 0, c=0,result = 0;
-	int a_number = strlen(a);
-	int b_number = strlen(b);
+	int a_count = strlen(a);
+	int b_count = strlen(b);
 	int count = 0;
 	bool comp = true;
 
@@ -40,7 +40,7 @@ int check_anagram(char a[], char b[])
 
 	do
 	{
-		for (int i = 0; i < b_number; i++)
+		for (int i = 0; i < b_count; i++)
 		{
 			first[a[c+i] - 'a']++;
 		}
@@ -59,7 +59,7 @@ int check_anagram(char a[], char b[])
 		{
 			first[i] = 0;
 		}
-		a_number--;
-	} while (a_number - b_number >= 0);
+		a_count--;
+	} while (a_count - b_count >= 0);
 	return result;
 }
